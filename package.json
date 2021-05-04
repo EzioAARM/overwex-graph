@@ -1,0 +1,24 @@
+{
+  "name": "overwex-graph",
+  "version": "1.0.0",
+  "description": "API en GraphQL para overwex",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apollo-server": "^2.23.0",
+    "aws-sdk": "^2.897.0",
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "graphql": "^15.5.0",
+    "jose": "^3.11.6",
+    "jsonwebtoken": "^8.5.1",
+    "jwk-to-pem": "^2.0.5",
+    "moment": "^2.29.1",
+    "uuid": "^8.3.2"
+  }
+}
