@@ -77,7 +77,7 @@ const server = new ApolloServer({
                 username: user
             }
         } catch (e) {
-            throw new ApolloError("Token invalido", "UNAUTHORIZED")
+            throw new ApolloError("Token invalido", "UNAUTHORIZED", e)
         }
     } 
 })
