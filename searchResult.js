@@ -22,7 +22,7 @@ const RedisValidation = async (username) => {
 const RedisCreation = async (username, dataToSave) => {
     let redis_key = 'search_' + username
     return new Promise((resolve, reject) => {
-        redisClient.set(redis_key, JSON.stringify(dataToSave), (error, data) => {
+        redisClient.set(redis_key, JSON.stringify(dataToSave), 'EX', 60 * 5, (error, data) => {
             if (error) reject(error)
             resolve(data)
         })

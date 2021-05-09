@@ -32,7 +32,7 @@ const RedisValidation = async (username, platform) => {
 const RedisCreation = async (username, platform, dataToSave) => {
     let redis_key = 'user_' + username + '_' + platform
     return new Promise((resolve, reject) => {
-        redisClient.set(redis_key, JSON.stringify(dataToSave), (error, data) => {
+        redisClient.set(redis_key, JSON.stringify(dataToSave), 'EX', 60 * 5, (error, data) => {
             if (error) reject(error)
             resolve(data)
         })
@@ -225,7 +225,6 @@ exports.GetApexUser = async (obj, args, context, info) => {
                 db_user_id = id_generado
             } else {
                 db_user_id = apexUserScan.Items[0].id
-                console.log(db_user_id)
                 await docClient.update({
                     TableName: "overwex-apex-user",
                     Key: {
